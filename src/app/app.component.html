@@ -1,0 +1,16 @@
+Hello World
+
+  <div *ngIf="cars$ | async as cars">
+    {{cars|json}}
+    <div *ngFor="let car of cars"> 
+      <h2>{{car.brand}} {{car.model}}</h2>
+      <p>{{car.battery}}kWh Battery</p>
+      <p>{{car.range}} KM Range</p> 
+    </div>
+  </div>
+
+
+
+
+
+<router-outlet></router-outlet>
