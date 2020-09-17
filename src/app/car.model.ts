@@ -1,4 +1,5 @@
 export const carAttributesMapping = {
+    year: 'year',
     brand: 'brand',
     model: 'model',
     bodyStyle: 'bodyStyle',
@@ -13,15 +14,16 @@ export const carAttributesMapping = {
     };
   
 export interface Car {
+    year: number;
     brand: string;
     model: string;
     bodyStyle: string;
     storage: string;
     seats: string;
-    battery: string;
-    range: string;
-    horsePower: string;
-    torque: string;
+    battery: number;
+    range: number;
+    horsePower: number;
+    torque: number;
     zeroToSixty: string;
     weight: string;
 };
