@@ -1,13 +1,11 @@
-Hello World
+Pick what you want
+<select>
+  <option value="short">Under 200 km</option>
+  <option value="medium">200-300 km</option>
+  <option value="long">300+ km</option>
+</select>
 
-  <div *ngIf="cars$ | async as cars">
-    {{cars|json}}
-    <div *ngFor="let car of cars"> 
-      <h2>{{car.year}} {{car.brand}} {{car.model}}</h2>
-      <p>{{car.battery}}kWh Battery</p>
-      <p>{{car.range}} KM Range</p> 
-    </div>
-  </div>
+<app-cars [range]="300"></app-cars>
 
 
 

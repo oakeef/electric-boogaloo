@@ -1,0 +1,8 @@
+<div *ngIf="cars$ | async as cars">
+
+    <div *ngFor="let car of cars"> 
+      <h2>{{car.year}} {{car.brand}} {{car.model}}</h2>
+      <p>{{car.battery}}kWh Battery</p>
+      <p>{{car.range}} KM Range</p> 
+    </div>
+  </div>
