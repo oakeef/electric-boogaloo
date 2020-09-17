@@ -1,11 +1,9 @@
-Pick what you want
-<select>
-  <option value="short">Under 200 km</option>
-  <option value="medium">200-300 km</option>
-  <option value="long">300+ km</option>
+<h1>Pick what you want</h1>
+<select [(ngModel)]="selectedRange" (ngModelChange)="onChangeRange($event)">
+  <option *ngFor="let range of ranges" [ngValue]="range.value">{{range.text}}</option>
 </select>
 
-<app-cars [range]="300"></app-cars>
+<app-cars [selectedRange]='selectedRange'></app-cars>
 
 
 

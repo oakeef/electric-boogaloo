@@ -1,7 +1,9 @@
 <div *ngIf="cars$ | async as cars">
 
+    <h2>There are {{ cars.length }} cars in your selection</h2>
+
     <div *ngFor="let car of cars"> 
-      <h2>{{car.year}} {{car.brand}} {{car.model}}</h2>
+      <h3>{{car.year}} {{car.brand}} {{car.model}}</h3>
       <p>{{car.battery}}kWh Battery</p>
       <p>{{car.range}} KM Range</p> 
     </div>
