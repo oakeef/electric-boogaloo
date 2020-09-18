@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'electric-boogaloo';
+  performanceDetails = false;
+
   ranges:Array<Object> = [
     {value: 0, text: 'Any Range'},
     {value: 100, text: 'More than 100KM'},
@@ -17,7 +19,7 @@ export class AppComponent implements OnInit {
   selectedRange: number;
 
   cost:Array<Object> = [
-    {value: 0, text: 'Any Range'},
+    {value: 200000, text: 'Any'},
     {value: 10000, text: '$5000-$10,000'},
     {value: 20000, text: '$10,000-$20,000'},
     {value: 30000, text: '$20,000-$30,000'},
@@ -51,6 +53,7 @@ export class AppComponent implements OnInit {
   constructor() { }
   
   ngOnInit(): void {
-    
+    this.selectedCost = 200000;
+    this.selectedRange = 0;
   }
 }

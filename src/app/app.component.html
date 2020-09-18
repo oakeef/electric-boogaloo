@@ -1,4 +1,12 @@
 <h1>Pick what you want</h1>
+<div>
+  <label>Show Performance Details:</label>
+    <input 
+      type="checkbox" 
+      [checked]="performanceDetails" 
+      (change)="performanceDetails = !performanceDetails" />
+</div>
+
 
 <div> 
   <label>Sort By:</label>
@@ -7,19 +15,16 @@
   </select>
 </div>
 
-<label>How Far do you want to go?</label>
-<select [(ngModel)]="selectedRange" (ngModelChange)="onChangeRange($event)">
-  <option *ngFor="let range of ranges" [ngValue]="range.value">{{range.text}}</option>
-</select>
-<label>How much do you want to pay?</label>
-<select [(ngModel)]="selectedCost" (ngModelChange)="onChangeCost($event)">
-  <option *ngFor="let amount of cost" [ngValue]="amount.value">{{amount.text}}</option>
-</select>
+<div>
+  <label>How Far do you want to go?</label>
+  <select [(ngModel)]="selectedRange" (ngModelChange)="onChangeRange($event)">
+    <option *ngFor="let range of ranges" [ngValue]="range.value">{{range.text}}</option>
+  </select>
 
-<app-cars [selectedRange]='selectedRange' [selectedCost]='selectedCost' [selectedSortOption]='selectedSortOption'></app-cars>
+  <label>How much do you want to pay?</label>
+  <select [(ngModel)]="selectedCost" (ngModelChange)="onChangeCost($event)">
+    <option *ngFor="let amount of cost" [ngValue]="amount.value">{{amount.text}}</option>
+  </select>
+</div>
 
-
-
-
-
-<router-outlet></router-outlet>
+<app-cars [selectedRange]='selectedRange' [selectedCost]='selectedCost' [selectedSortOption]='selectedSortOption' [performanceDetails]='performanceDetails'></app-cars>

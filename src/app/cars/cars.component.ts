@@ -15,6 +15,7 @@ export class CarsComponent implements OnInit, OnChanges {
   @Input() selectedRange : number;
   @Input() selectedCost : number;
   @Input() selectedSortOption : string;
+  @Input() performanceDetails : boolean;
   
   cars$: Observable<Car[]>;
 
@@ -26,20 +27,19 @@ export class CarsComponent implements OnInit, OnChanges {
       tap(cars => {
         switch(String(this.selectedSortOption)){
           case 'priceAsc':
-            console.log("DOG ASS");
             cars.sort((car1, car2) => car1.cost - car2.cost)
             break;
           case 'priceDesc':
-            console.log("DOG DESK");
             cars.sort((car1, car2) => car2.cost - car1.cost)
             break;
           case 'rangeAsc':
-            console.log("DOG ASS");
             cars.sort((car1, car2) => car1.range - car2.range)
             break;
           case 'rangeDesc':
-            console.log("DOG DESK");
             cars.sort((car1, car2) => car2.range - car1.range)
+            break;
+          default :
+            cars.sort((car1, car2) => car1.cost - car2.cost)
             break;
          }
       }),
@@ -47,8 +47,6 @@ export class CarsComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this.selectedRange = 0;
-    this.selectedCost = 0;
     this.cars$ = this.googleSheetsDbService.get<Car>(environment.cars.spreadsheetId, environment.cars.worksheetId, carAttributesMapping).pipe(
       tap(cars => cars.sort((car1, car2) => car1.range - car2.range)),
     );
