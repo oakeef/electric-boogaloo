@@ -19,13 +19,16 @@ export class AppComponent implements OnInit {
   selectedRange: number;
 
   cost:Array<Object> = [
-    {value: 200000, text: 'Any'},
-    {value: 10000, text: '$5000-$10,000'},
-    {value: 20000, text: '$10,000-$20,000'},
-    {value: 30000, text: '$20,000-$30,000'},
-    {value: 40000, text: '$30,000-$40,000'},
-    {value: 50000, text: '$40,000-$50,000'},
-    {value: 60000, text: '$50,000+'},
+    {value: 0, text: 'Any'},
+    {value: 10000, text: '$10,000+'},
+    {value: 20000, text: '$20,000+'},
+    {value: 30000, text: '$30,000+'},
+    {value: 40000, text: '$40,000+'},
+    {value: 50000, text: '$50,000+'},
+    {value: 60000, text: '$60,000+'},
+    {value: 70000, text: '$70,000+'},
+    {value: 80000, text: '$80,000+'},
+    {value: 90000, text: '$90,000+'},
   ];
   selectedCost: number;
 
@@ -53,7 +56,8 @@ export class AppComponent implements OnInit {
   constructor() { }
   
   ngOnInit(): void {
-    this.selectedCost = 200000;
+    this.selectedCost = 0;
     this.selectedRange = 0;
+    this.selectedSortOption = 'priceAsc';
   }
 }

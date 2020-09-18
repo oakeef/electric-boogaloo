@@ -3,16 +3,40 @@
     <h2>There are {{ cars.length }} cars in your selection</h2>
 
     <div *ngFor="let car of cars"> 
-      <h3>{{car.year}} {{car.brand}} {{car.model}}</h3>
-      <h4>${{car.cost}}</h4>
+        <hr>
+        <h3>{{car.year}} {{car.brand}} {{car.model}}</h3>
+        <h3>Lowest Price:  ${{car.cost}}</h3>
+        <h3>Original MSRP: ${{car.msrp}}</h3>
 
-      <div *ngIf="performanceDetails">
-        <strong>{{car.horsePower}}</strong> Horse Power<br>
-        <strong>{{car.torque}}</strong> lb-ft of Torque<br>
-        <strong>{{car.zeroToSixty}}s</strong> 0-60
-      </div>
-      
-      <p>{{car.battery}}kWh Battery</p>
-      <p>{{car.range}} KM Range</p> 
+        <div *ngIf="performanceDetails">
+            <h4>Performance Details:</h4>
+            <ul>
+                <li><strong>{{car.horsePower}}</strong> Horse Power<br></li>
+                <li><strong>{{car.torque}}</strong> lb-ft of Torque<br></li>
+                <li><strong>{{car.zeroToSixty}}s</strong> 0-60</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Car Details:</h4>
+            <ul>
+                <li><strong>{{car.drive}}</strong></li>
+                <li><strong>{{car.storage}}</strong> ft3 Storage</li>
+                <li><strong>{{car.bodyStyle}}</strong> Body style</li>
+                <li><strong>{{car.seats}}</strong> Seats</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Battery and Range Details:</h4>
+            <!-- <div class="battery">
+                <div class="battery-level" [ngStyle]="{ height: car.battery + '%' }"></div>
+            </div> -->
+            <ul>
+                <li><strong>{{car.battery}}</strong> kWh Battery</li>
+                <li><strong>{{car.range}}</strong> KM Range</li>
+            </ul>
+        </div> 
+
     </div>
   </div>

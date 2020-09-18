@@ -5,13 +5,15 @@ export const carAttributesMapping = {
     bodyStyle: 'bodyStyle',
     storage: 'storage',
     seats: 'seats',
+    drive: 'drive',
     battery: 'kwh',
     range: 'range',
     horsePower: 'hp',
     torque: 'tq',
     zeroToSixty: 'zeroToSixty',
     weight: 'weight',
-    cost: 'lowestPrice'
+    cost: 'lowestPrice',
+    msrp: 'msrp'
     };
   
 export interface Car {
@@ -21,6 +23,7 @@ export interface Car {
     bodyStyle: string;
     storage: string;
     seats: string;
+    drive: string;
     battery: number;
     range: number;
     horsePower: number;
@@ -28,4 +31,5 @@ export interface Car {
     zeroToSixty: string;
     weight: string;
     cost: number;
+    msrp: number;
 };

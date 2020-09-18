@@ -23,7 +23,7 @@ export class CarsComponent implements OnInit, OnChanges {
   
   ngOnChanges(changes: SimpleChanges): void {
     this.cars$ = this.googleSheetsDbService.get<Car>(environment.cars.spreadsheetId, environment.cars.worksheetId, carAttributesMapping).pipe(
-      map(cars => cars.filter(car => car.range >= this.selectedRange && car.cost <= this.selectedCost)),
+      map(cars => cars.filter(car => car.range >= this.selectedRange && car.cost >= this.selectedCost)),
       tap(cars => {
         switch(String(this.selectedSortOption)){
           case 'priceAsc':

@@ -1,27 +1,27 @@
 <h1>Pick what you want</h1>
 <div>
-  <label>Show Performance Details:</label>
+  <p>Show Performance Details:</p>
     <input 
       type="checkbox" 
       [checked]="performanceDetails" 
       (change)="performanceDetails = !performanceDetails" />
+      {{performanceDetails}}
 </div>
 
-
 <div> 
-  <label>Sort By:</label>
+  <p>Sort By:</p>
   <select [(ngModel)]="selectedSortOption" (ngModelChange)="onChangeSort($event)">
     <option *ngFor="let option of options" [ngValue]="option.value">{{option.text}}</option>
   </select>
 </div>
 
 <div>
-  <label>How Far do you want to go?</label>
+  <p>How Far do you want to go?</p>
   <select [(ngModel)]="selectedRange" (ngModelChange)="onChangeRange($event)">
     <option *ngFor="let range of ranges" [ngValue]="range.value">{{range.text}}</option>
   </select>
 
-  <label>How much do you want to pay?</label>
+  <p>How much do you want to pay?</p>
   <select [(ngModel)]="selectedCost" (ngModelChange)="onChangeCost($event)">
     <option *ngFor="let amount of cost" [ngValue]="amount.value">{{amount.text}}</option>
   </select>
