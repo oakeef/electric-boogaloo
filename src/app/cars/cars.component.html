@@ -4,6 +4,7 @@
 
     <div *ngFor="let car of cars"> 
       <h3>{{car.year}} {{car.brand}} {{car.model}}</h3>
+      <strong>${{car.cost}}</strong>
       <p>{{car.battery}}kWh Battery</p>
       <p>{{car.range}} KM Range</p> 
     </div>

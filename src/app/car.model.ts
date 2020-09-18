@@ -11,6 +11,7 @@ export const carAttributesMapping = {
     torque: 'tq',
     zeroToSixty: 'zeroToSixty',
     weight: 'weight',
+    cost: 'lowestPrice'
     };
   
 export interface Car {
@@ -26,4 +27,5 @@ export interface Car {
     torque: number;
     zeroToSixty: string;
     weight: string;
+    cost: number;
 };
